@@ -1,0 +1,34 @@
+<ion-view view-title="Playlist">
+  <ion-content>
+    <div class="list card">
+
+	  <div class="item item-avatar">
+	    <img src="https://image.tmdb.org/t/p/w130/{{playlist.backdrop_path}}">
+	    <h2>{{playlist.title}}</h2>
+	    <p>{{playlist.tagline}}</p>
+	  </div>
+
+	  <div class="item item-image">
+	    <img src="https://image.tmdb.org/t/p/w130/{{playlist.poster_path}}">
+	  </div>
+
+	  <a class="item item-icon-left assertive" href="{{playlist.homepage}}">
+	    <i class="icon ion-social-youtube-outline"></i>
+	    go link
+	  </a>
+
+	  <div class="overview">
+	  	{{playlist.overview}}
+	  </div>
+
+	  <div class="separator">
+	  	<h5>Production:</h5>
+	  	<span ng-repeat="production in playlist.production_countries" class="padding-right">{{production.name}}</span>
+	  	<h5>Genre:</h5>
+	  	<i ng-repeat="genre in playlist.genres" class="padding-right">
+	        {{genre.name}}
+	    </i>
+	  </div>
+	</div>
+  </ion-content>
+</ion-view>

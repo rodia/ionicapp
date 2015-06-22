@@ -1,0 +1,11 @@
+<ion-view view-title="Playlists">
+  <ion-content>
+    <ion-list>
+      <ion-item ng-repeat="playlist in playlists" href="#/app/playlists/{{playlist.id}}" class="item item-avatar">
+      	<img src="https://image.tmdb.org/t/p/w130/{{playlist.backdrop_path}}">
+	      <h2>{{playlist.title}}</h2>
+	      <p>{{playlist.original_title}}</p>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
