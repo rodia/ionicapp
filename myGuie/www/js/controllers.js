@@ -43,7 +43,27 @@ angular.module('starter.controllers', [])
 })
 
 .controller('AppSearch', function($scope, $http) {
+  //http://api.themoviedb.org/3/search/
 
+  var element = document.getElementById("search");
+  var keyword = element.text;
+
+  if (keyword != '') {
+    $http.get('http://api.themoviedb.org/3/search/' + keyword + '?api_key=' + api_key).then(function(resp) {
+      $scope.playlists = resp.data.results;
+    }, function(err) {
+      console.error('ERR', err);
+    });
+  }
+})
+
+.controller('AppGenres', function($scope, $http) {
+
+  $http.get('http://api.themoviedb.org/3/discover/movie?api_key=' + api_key).then(function(resp) {
+    $scope.genres = resp.data.results;
+  }, function(err) {
+    console.error('ERR', err);
+  });
 })
 
 .controller('PlaylistsCtrl', function($scope, $http) {

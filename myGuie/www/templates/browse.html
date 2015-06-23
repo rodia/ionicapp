@@ -1,5 +1,11 @@
 <ion-view view-title="Browse">
   <ion-content>
-    <h1>Browse</h1>
+    <ion-list>
+      <ion-item ng-repeat="genre in genres" href="#/app/playlists/{{genre.id}}" class="item item-avatar">
+      	<img src="https://image.tmdb.org/t/p/w130/{{genre.backdrop_path}}">
+	      <h2>{{genre.title}}</h2>
+	      <p>{{genre.original_title}}</p>
+      </ion-item>
+    </ion-list>
   </ion-content>
 </ion-view>
